@@ -1,0 +1,56 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Travel badge glow ring -->
+    <path
+        android:fillColor="#15FFFFFF"
+        android:pathData="M54,54m-33,0a33,33 0 1,0 66,0a33,33 0 1,0 -66,0" />
+    
+    <!-- Stylized Shinkansen bullet train nose & body -->
+    <!-- Train Base & Aerodynamic Front Nose -->
+    <path
+        android:fillColor="#F8FAFC"
+        android:pathData="M30,68 L30,48 C30,42 35,36 42,34 L66,32 C75,32 82,37 84,45 L85,62 C85,66 82,68 78,68 Z" />
+    
+    <!-- Shinkansen Cockpit Window (Glossy Indigo) -->
+    <path
+        android:fillColor="#1E293B"
+        android:pathData="M54,36 L70,35 C75,35 79,38 80,43 L81,48 L52,48 Z" />
+
+    <!-- Japanese Sunrise Accent Ribbon Line (Coral Red) -->
+    <path
+        android:fillColor="#EF4444"
+        android:pathData="M30,55 L84,55 L83.5,59 L30,59 Z" />
+
+    <!-- Train Headlights / Details -->
+    <path
+        android:fillColor="#F59E0B"
+        android:pathData="M81,62 A2,2 0 1,0 81,66 A2,2 0 1,0 81,62" />
+
+    <!-- Sleek High Speed Track & Motion Lines -->
+    <path
+        android:fillColor="#94A3B8"
+        android:pathData="M24,74 L84,74 L84,76.5 L24,76.5 Z" />
+    <path
+        android:fillColor="#CBD5E1"
+        android:pathData="M30,76.5 L34,81 L31,81 L27,76.5 Z" />
+    <path
+        android:fillColor="#CBD5E1"
+        android:pathData="M44,76.5 L48,81 L45,81 L41,76.5 Z" />
+    <path
+        android:fillColor="#CBD5E1"
+        android:pathData="M58,76.5 L62,81 L59,81 L55,76.5 Z" />
+    <path
+        android:fillColor="#CBD5E1"
+        android:pathData="M72,76.5 L76,81 L73,81 L69,76.5 Z" />
+
+    <!-- Location Pin Pinpoint Motif at top left -->
+    <path
+        android:fillColor="#38BDF8"
+        android:pathData="M34,26 C30.7,26 28,28.7 28,32 C28,36.5 34,43 34,43 C34,43 40,36.5 40,32 C40,28.7 37.3,26 34,26 Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M34,30 A2,2 0 1,0 34,34 A2,2 0 1,0 34,30" />
+</vector>

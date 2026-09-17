@@ -1,0 +1,6 @@
+{
+  "name": "간사이·키타큐슈 여행 플래너",
+  "description": "9월 20일-25일 오사카·키타큐슈 5박 6일 시간대별 상세 일정, 교통편 및 패스, 아이 동반 현지인 맛집, 우천·돌발상황 대체 코스, 실시간 교통·날씨 및 긴급 비상연락망·일본어 회화",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
