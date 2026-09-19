@@ -20,3 +20,4 @@ debug.keystore
 .vercel/
 docs/.vercel/
 .env*
+docs/.netlify/
