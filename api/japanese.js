@@ -124,7 +124,7 @@ const BANK = {
     {
       korean: "카드로 결제할게요.",
       japanese: "カードで払います。",
-      pronunciation: "카아도 데 하라imasu".replace("하라imasu", "하라이마스"),
+      pronunciation: "카아도 데 하라이마스",
       tip: "현금 대신 카드 결제할 때.",
     },
   ],
@@ -181,9 +181,6 @@ const BANK = {
     },
   ],
 };
-
-// fix the accidental replace typo in 쇼핑 card
-BANK.쇼핑[3].pronunciation = "카아도 데 하라이마스";
 
 function cors(res) {
   res.setHeader("Access-Control-Allow-Origin", "*");
