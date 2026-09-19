@@ -191,7 +191,7 @@ fun ScheduleScreen(
                         onToggleComplete = { viewModel.toggleScheduleCompletion(schedule) },
                         onEdit = { viewModel.openEditScheduleDialog(schedule) },
                         onSaveMemo = { memo -> viewModel.updateScheduleMemo(schedule, memo) },
-                        onOpenMap = { openGoogleMaps(context, schedule.locationName.ifBlank { schedule.title }) }
+                        onOpenMap = { openGoogleMaps(context, listOf(schedule.locationName, schedule.city, "日本").filter { it.isNotBlank() }.joinToString(" ").ifBlank { schedule.title }) }
                     )
                 }
             }
