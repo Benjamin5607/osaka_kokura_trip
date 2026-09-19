@@ -51,4 +51,74 @@ class ExampleUnitTest {
         assertTrue(hasPolice)
         assertTrue(hasAmbulance)
     }
+
+    @Test
+    fun testTripScheduleIntegrityAndKlookTour() {
+        val schedules = InitialTripData.getDefaultSchedules()
+        assertTrue("Schedule should contain at least 20 items across 6 days", schedules.size >= 20)
+
+        // Day 2 must have the Klook Arashiyama Kyoto bus tour
+        val day2Schedules = schedules.filter { it.dayNumber == 2 }
+        assertTrue("Day 2 should have multiple tour spots", day2Schedules.isNotEmpty())
+        val busTourItem = day2Schedules.find { it.title.contains("Klook") || it.title.contains("교토") }
+        assertTrue("Day 2 should feature Klook Kyoto bus tour", busTourItem != null)
+        assertTrue("Day 2 should include Arashiyama", day2Schedules.any { it.locationName.contains("아라시야마") || it.title.contains("아라시야마") })
+
+        // Verify that sashimi (회, 사시미) and wagyu/beef (와규, 소고기) are actively included in Osaka schedules (Days 1~3)
+        val osakaSchedules = schedules.filter { it.dayNumber in 1..3 }
+        val hasSashimiInOsaka = osakaSchedules.any { it.restaurantMenu.contains("사시미") || it.restaurantMenu.contains("활어회") || it.restaurantMenu.contains("생선회") }
+        val hasWagyuInOsaka = osakaSchedules.any { it.restaurantMenu.contains("와규") || it.restaurantMenu.contains("소고기") }
+        assertTrue("Osaka schedule should actively feature sashimi for parents", hasSashimiInOsaka)
+        assertTrue("Osaka schedule should actively feature wagyu/beef for parents", hasWagyuInOsaka)
+
+        // Verify that offal (내장, 호르몬, 곱창) is strictly excluded from all menus
+        schedules.forEach { item ->
+            assertFalse("Should strictly exclude offal/hormone from recommended menu: ${item.restaurantMenu}", 
+                item.restaurantMenu.contains("곱창") || item.restaurantMenu.contains("호르몬") || item.restaurantMenu.contains("대창"))
+        }
+    }
+
+    @Test
+    fun testOsakaMetroPassAndVisaContactless() {
+        val schedules = InitialTripData.getDefaultSchedules()
+        val checklists = InitialTripData.getDefaultChecklists()
+
+        // 1. Day 1 should include Osaka Metro Pass 2-Day with booking code ZNZ343191
+        val day1 = schedules.filter { it.dayNumber == 1 }
+        val hasMetroPassDay1 = day1.any { it.transitGuide.contains("메트로패스") || it.kidsFriendlyTip.contains("메트로패스") }
+        assertTrue("Day 1 should mention Metro Pass", hasMetroPassDay1)
+
+        // 2. Day 3 should mention Visa contactless or 1-day pass
+        val day3 = schedules.filter { it.dayNumber == 3 }
+        val hasVisaOr1DayPass = day3.any { it.transitGuide.contains("비자") || it.kidsFriendlyTip.contains("비자") || it.transitGuide.contains("1일권") }
+        assertTrue("Day 3 should guide on Visa contactless or 1-day pass", hasVisaOr1DayPass)
+
+        // 3. Checklists should have the Metro Pass voucher and Visa Contactless card
+        val hasMetroPassChecklist = checklists.any { it.title.contains("ZNZ343191") }
+        val hasVisaChecklist = checklists.any { it.title.contains("컨택리스") || it.title.contains("비자") }
+        assertTrue("Checklist should contain Metro Pass voucher with booking no", hasMetroPassChecklist)
+        assertTrue("Checklist should contain Visa contactless card", hasVisaChecklist)
+    }
+
+    @Test
+    fun testTripDatesAndDaysOfWeek() {
+        val schedules = InitialTripData.getDefaultSchedules()
+
+        val expectedDates = mapOf(
+            1 to "9월 20일 (일)",
+            2 to "9월 21일 (월)",
+            3 to "9월 22일 (화)",
+            4 to "9월 23일 (수)",
+            5 to "9월 24일 (목)",
+            6 to "9월 25일 (금)"
+        )
+
+        for ((day, expectedDate) in expectedDates) {
+            val daySchedules = schedules.filter { it.dayNumber == day }
+            assertTrue("Day $day should have schedules", daySchedules.isNotEmpty())
+            daySchedules.forEach {
+                assertEquals("Day $day must have date text $expectedDate", expectedDate, it.dateText)
+            }
+        }
+    }
 }

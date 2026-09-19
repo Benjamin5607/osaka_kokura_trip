@@ -8,7 +8,7 @@ data class TripScheduleEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0,
     val dayNumber: Int,              // 1 to 6
-    val dateText: String,            // e.g., "9월 20일 (토)"
+    val dateText: String,            // e.g., "9월 20일 (일)"
     val city: String,                // "오사카", "교토", "키타큐슈"
     val timeSlot: String,            // "10:00 - 11:30"
     val title: String,

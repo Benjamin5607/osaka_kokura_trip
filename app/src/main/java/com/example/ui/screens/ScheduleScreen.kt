@@ -106,12 +106,12 @@ fun ScheduleScreen(
     val completedCount = schedules.count { it.isCompleted }
 
     val daysInfo = listOf(
-        Triple(1, "9/20 (토)", "오사카 캐슬·신세카이"),
-        Triple(2, "9/21 (일)", "교토 투어·도톤보리"),
-        Triple(3, "9/22 (월)", "오사카 쇼핑·온천"),
-        Triple(4, "9/23 (화)", "키타큐슈·고쿠라성"),
-        Triple(5, "9/24 (수)", "모지코·간몬 해저터널"),
-        Triple(6, "9/25 (목)", "고쿠라 쇼핑·귀국")
+        Triple(1, "9/20 (일)", "오사카 캐슬·신세카이"),
+        Triple(2, "9/21 (월)", "교토 투어·도톤보리"),
+        Triple(3, "9/22 (화)", "오사카 쇼핑·온천"),
+        Triple(4, "9/23 (수)", "키타큐슈·고쿠라성"),
+        Triple(5, "9/24 (목)", "모지코·간몬 해저터널"),
+        Triple(6, "9/25 (금)", "고쿠라 쇼핑·귀국")
     )
 
     val currentHotel = if (uiState.selectedDay <= 3) {

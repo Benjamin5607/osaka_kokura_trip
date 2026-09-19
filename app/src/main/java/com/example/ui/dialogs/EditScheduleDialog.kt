@@ -67,12 +67,12 @@ fun EditScheduleDialog(
     val categories = listOf("관광", "맛집", "교통", "쇼핑", "온천", "숙소")
 
     val dayDates = mapOf(
-        1 to Pair("9월 20일 (토)", "오사카"),
-        2 to Pair("9월 21일 (일)", "교토"),
-        3 to Pair("9월 22일 (월)", "오사카"),
-        4 to Pair("9월 23일 (화)", "키타큐슈"),
-        5 to Pair("9월 24일 (수)", "키타큐슈"),
-        6 to Pair("9월 25일 (목)", "키타큐슈")
+        1 to Pair("9월 20일 (일)", "오사카"),
+        2 to Pair("9월 21일 (월)", "교토"),
+        3 to Pair("9월 22일 (화)", "오사카"),
+        4 to Pair("9월 23일 (수)", "키타큐슈"),
+        5 to Pair("9월 24일 (목)", "키타큐슈"),
+        6 to Pair("9월 25일 (금)", "키타큐슈")
     )
 
     AlertDialog(
@@ -193,7 +193,7 @@ fun EditScheduleDialog(
                 OutlinedTextField(
                     value = kidsFriendlyTip,
                     onValueChange = { kidsFriendlyTip = it },
-                    label = { Text("초등학생 아이 꿀팁 / 주의사항") },
+                    label = { Text("부모님 안심 꿀팁 / 주의사항") },
                     modifier = Modifier.fillMaxWidth(),
                     minLines = 2
                 )
@@ -209,7 +209,7 @@ fun EditScheduleDialog(
                 OutlinedTextField(
                     value = restaurantMenu,
                     onValueChange = { restaurantMenu = it },
-                    label = { Text("추천 메뉴 (아이들이 좋아하는 메뉴)") },
+                    label = { Text("추천 메뉴 (부모님 추천 안심 메뉴)") },
                     modifier = Modifier.fillMaxWidth(),
                     singleLine = true
                 )

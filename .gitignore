@@ -16,9 +16,3 @@
 local.properties
 .env
 debug.keystore
-
-.vercel/
-docs/.vercel/
-docs/.netlify/
-.vercel
-.env*

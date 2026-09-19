@@ -53,7 +53,7 @@ import com.example.ui.dialogs.EditScheduleDialog
 import com.example.ui.dialogs.ShowPhraseFlashCardDialog
 import com.example.ui.screens.ChecklistScreen
 import com.example.ui.screens.ContingencyScreen
-import com.example.ui.screens.KidsGourmetScreen
+import com.example.ui.screens.GourmetScreen
 import com.example.ui.screens.ScheduleScreen
 import com.example.ui.screens.TransitPassScreen
 import com.example.ui.theme.CrimsonAccent
@@ -179,7 +179,7 @@ fun TripMainApp(viewModel: TripViewModel) {
                     schedules = filteredSchedules
                 )
                 MainTab.TRANSIT_PASS -> TransitPassScreen()
-                MainTab.GOURMET -> KidsGourmetScreen()
+                MainTab.GOURMET -> GourmetScreen()
                 MainTab.CONTINGENCY -> ContingencyScreen(
                     viewModel = viewModel,
                     uiState = uiState,

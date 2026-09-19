@@ -328,7 +328,7 @@ fun IndoorAlternativesTab(
                     )
                     Spacer(modifier = Modifier.width(8.dp))
                     Text(
-                        text = "야외 관광지 비바람·지연 시 즉시 전환 가능한 초등학생 맞춤 실내 명소",
+                        text = "야외 관광지 비바람·지연 시 부모님과 함께 가기 좋은 쾌적한 실내 명소",
                         style = MaterialTheme.typography.bodySmall.copy(
                             fontWeight = FontWeight.Medium,
                             color = Color(0xFF334155)
@@ -464,7 +464,7 @@ fun AlternativeActivityCard(
                     verticalAlignment = Alignment.Top
                 ) {
                     Icon(
-                        Icons.Default.ChildCare,
+                        Icons.Default.Security,
                         contentDescription = null,
                         tint = AmberWarm,
                         modifier = Modifier
@@ -474,7 +474,7 @@ fun AlternativeActivityCard(
                     Spacer(modifier = Modifier.width(8.dp))
                     Column {
                         Text(
-                            text = "아이 동반 & 실내 안심 포인트",
+                            text = "부모님 안심 & 실내 쾌적 포인트",
                             style = MaterialTheme.typography.labelSmall.copy(
                                 fontWeight = FontWeight.Bold,
                                 color = AmberWarm
@@ -1057,7 +1057,7 @@ fun EmergencyPhrasesTab(
     onCopy: (String) -> Unit
 ) {
     var selectedCatFilter by remember { mutableStateOf("전체") }
-    val categories = listOf("전체", "교통 지연·길찾기", "아이 질환·약국·응급", "분실·경찰·도움", "식당 주문 (회·내장 제외)")
+    val categories = listOf("전체", "교통 지연·길찾기", "부모님 질환·약국·응급", "분실·경찰·도움", "식당 주문 (내장 제외·회/와규)")
 
     val filteredPhrases = if (selectedCatFilter == "전체") {
         phrases
