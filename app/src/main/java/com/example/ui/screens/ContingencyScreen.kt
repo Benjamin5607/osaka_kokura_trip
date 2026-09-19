@@ -339,7 +339,17 @@ fun IndoorAlternativesTab(
         }
 
         items(filteredList, key = { it.id }) { item ->
-            AlternativeActivityCard(item = item, onOpenMap = { onOpenMap(item.alternativeLocation) })
+            AlternativeActivityCard(
+                item = item,
+                onOpenMap = {
+                    onOpenMap(
+                        listOf(item.alternativeLocation, item.alternativeTitle, "日本")
+                            .filter { it.isNotBlank() }
+                            .distinct()
+                            .joinToString(" ")
+                    )
+                }
+            )
         }
     }
 }
@@ -866,7 +876,14 @@ fun EmergencyContactsTab(
                 contact = contact,
                 onCall = { onCall(contact.phoneNumber) },
                 onCopy = { onCopy(contact.phoneNumber) },
-                onOpenMap = { onOpenMap(contact.address) },
+                onOpenMap = {
+                    onOpenMap(
+                        listOf(contact.address, contact.name, "日本")
+                            .filter { it.isNotBlank() }
+                            .distinct()
+                            .joinToString(" ")
+                    )
+                },
                 onEdit = { onEditContact(contact) }
             )
         }
