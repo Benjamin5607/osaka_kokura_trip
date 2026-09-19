@@ -244,12 +244,28 @@ function filteredSchedules() {
   });
 }
 
+function mapsUrl(...parts) {
+  const q = parts.filter(Boolean).join(" ").trim();
+  if (!q) return "";
+  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+}
+
+function mapsBtn(label, ...parts) {
+  const href = mapsUrl(...parts);
+  if (!href) return "";
+  return `<a class="btn btn-ghost" target="_blank" rel="noopener" href="${href}">${esc(label)}</a>`;
+}
+
 function scheduleCardsHtml() {
   const items = filteredSchedules();
   if (!items.length) return `<p class="empty">해당 조건의 일정이 없습니다.</p>`;
   return items
     .map((s, i) => {
       const done = !!state.completed[s.id];
+      const mapQuery = [s.locationName || s.title, s.city, "일본"].filter(Boolean).join(" ");
+      const restMap = s.restaurantName
+        ? mapsBtn("맛집 지도", s.restaurantName, s.city || s.locationName, "일본")
+        : "";
       return `
       <article class="card ${done ? "done" : ""}" style="animation-delay:${i * 40}ms">
         <div class="card-top">
@@ -270,6 +286,8 @@ function scheduleCardsHtml() {
           <button type="button" class="btn ${done ? "btn-ghost" : "btn-primary"}" data-toggle="${s.id}">
             ${done ? "완료 취소" : "일정 완료"}
           </button>
+          ${mapsBtn("구글맵 길찾기", mapQuery)}
+          ${restMap}
         </div>
       </article>`;
     })
@@ -318,6 +336,7 @@ function renderTransit() {
         <p class="meta">${esc(s.routeSummary)}</p>
         <ol class="step-list">${s.steps.map((st) => `<li>${esc(st)}</li>`).join("")}</ol>
         <div class="tip">${esc(s.tip)}</div>
+        <div class="actions">${mapsBtn("구글맵으로 보기", s.title, "일본")}</div>
       </article>`
       )
       .join("")}
@@ -383,9 +402,7 @@ function renderGourmet() {
         <p class="muted"><strong>가격:</strong> ${esc(g.price)}</p>
         <p class="muted" style="margin-top:8px">${esc(g.localFeature)}</p>
         <div class="tip">${esc(g.kidComfortTip)}</div>
-        <div class="actions">
-          <a class="btn btn-ghost" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(g.addressQuery || g.nameJa || g.nameKo)}">지도에서 찾기</a>
-        </div>
+        <div class="actions">${mapsBtn("구글맵 길찾기", g.addressQuery || g.nameJa || g.nameKo, g.city, "일본")}</div>
       </article>`
             )
             .join("")
@@ -412,6 +429,7 @@ function renderSos() {
         <p class="muted" style="margin-top:8px"><strong>이동:</strong> ${esc(a.transitGuide)}</p>
         <div class="safe">${esc(a.indoorAdvantage)}</div>
         <div class="tip">${esc(a.nearbyFoodTip)}</div>
+        <div class="actions">${mapsBtn("구글맵 길찾기", a.alternativeLocation || a.alternativeTitle, "일본")}</div>
       </article>`
       )
       .join("");
@@ -458,6 +476,13 @@ function renderSos() {
           <p class="meta"><a href="tel:${esc(c.phoneNumber)}">${esc(c.phoneNumber)}</a>${c.emergencyPhone ? ` · 비상 ${esc(c.emergencyPhone)}` : ""}</p>
           ${c.address ? `<p class="muted">${esc(c.address)}</p>` : ""}
           ${c.note ? `<div class="tip">${esc(c.note)}</div>` : ""}
+          ${
+            c.address && !/^(현지|가입)/.test(c.address)
+              ? `<div class="actions">${mapsBtn("구글맵 길찾기", c.address, c.name)}</div>`
+              : c.category === "숙소" || c.category === "대사관/영사관"
+                ? `<div class="actions">${mapsBtn("구글맵으로 검색", c.name, "일본")}</div>`
+                : ""
+          }
         </article>`
         )
         .join("")}`

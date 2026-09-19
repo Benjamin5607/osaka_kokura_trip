@@ -139,42 +139,42 @@ object ContingencyData {
         AlternativeActivity(
             id = "d4_kokura_rain",
             dayNumber = 4,
-            originalSpot = "고쿠라성 야외 정원",
+            originalSpot = "생명의 여행 박물관 야외 동선 / 사라쿠라산 전망",
             situation = "우천/악천후 (비 올 때)",
-            alternativeTitle = "리버워크 기타큐슈 (대형 복합 실내몰) & 고쿠라성 역사전시실",
-            alternativeLocation = "고쿠라성 바로 옆 리버워크 기타큐슈",
-            transitGuide = "고쿠라역에서 버스로 4분 또는 도보 10분 (성 내부 엘리베이터 및 리버워크 실내 연결).",
-            description = "고쿠라성 정원에 비가 올 때, 고쿠라성 천수각 내부의 현대식 엘리베이터를 타고 쾌적하게 역사 전시를 관람한 후, 바로 옆 대형 실내 문화복합몰인 리버워크 기타큐슈로 이동합니다. 통유리로 비 내리는 고쿠라성을 바라보며 실내 카페에서 차 한 잔의 여유를 즐길 수 있습니다.",
-            indoorAdvantage = "고쿠라성 내부 엘리베이터 완비로 계단 보행 불필요. 리버워크 실내 통로로 비바람 차단.",
-            nearbyFoodTip = "리버워크 4층 식당가: '텐푸라 타카오' 즉석 수제 튀김 정식 & '스케상 우동' (소고기 온우동)"
+            alternativeTitle = "생명의 여행 박물관 실내 관람 연장 & 더 아울렛·이온몰",
+            alternativeLocation = "생명의 여행 박물관 / THE OUTLETS KITAKYUSHU",
+            transitGuide = "JR 스페이스월드역 도보 5분. 박물관·아울렛이 인접해 우천 시에도 실내 위주 이동.",
+            description = "야외 이동이 힘들 때는 생명의 여행 박물관 실내 전시를 충분히 보고, 바로 옆 더 아울렛·이온몰에서 쇼핑과 휴식을 이어갑니다. 사라쿠라산은 강풍·폭우 시 운휴될 수 있으니 당일 케이블카 운행을 확인하세요.",
+            indoorAdvantage = "박물관·아울렛 모두 실내 중심. 카페 라운지에서 비 피할 수 있음.",
+            nearbyFoodTip = "더 아울렛 내 '키와미야 함바그' 또는 푸드코트 익힌 메뉴"
         ),
 
         // Day 5
         AlternativeActivity(
             id = "d5_mojiko_rain",
             dayNumber = 5,
-            originalSpot = "모지코 레트로 야외 산책 & 간몬 유람선",
+            originalSpot = "모지코 레트로 야외 산책",
             situation = "우천/악천후 (비 올 때)",
-            alternativeTitle = "큐슈 철도기념관 (실내 역사관) & 간몬 해저 인도 터널 (바다 속 도보)",
-            alternativeLocation = "큐슈 철도기념관 (모지코역 바로 옆) / 간몬터널 (해저 55m)",
-            transitGuide = "모지코역에서 도보 1분 큐슈 철도기념관. 간몬 터널은 비바람이 몰아쳐도 해저 엘리베이터를 타고 완벽한 실내에서 바다 밑 780m를 건널 수 있음.",
-            description = "해변가 모지코에 바닷바람과 비가 불 때, 큐슈 철도기념관 실내 본관에서 메이지 시대 고풍스러운 목조 객차를 관람합니다. 또한 유람선이 결항되더라도 '간몬 해저 인도 터널'을 이용하면 비 한 방울 맞지 않고 후쿠오카현에서 야마구치현 시모노세키로 바다 밑을 걸어서 건널 수 있습니다.",
-            indoorAdvantage = "전천후 날씨 무관! 해저 현 경계선(후쿠오카-야마구치)에서 부모님 기념사진 촬영 인기.",
-            nearbyFoodTip = "모지코 레트로 '베어 프루츠(Bear Fruits)' 본점: 뚝배기 치즈 야키카레 (맵지 않은 순한맛 선택 가능, 회·내장 0%)"
+            alternativeTitle = "큐슈 철도기념관 (실내) & 간몬 해저 인도 터널",
+            alternativeLocation = "큐슈 철도기념관 (모지코역 옆) / 간몬터널",
+            transitGuide = "모지코역에서 도보 1분 철도기념관. 우천 시 간몬 해저 터널로 실내 도보 체험 가능.",
+            description = "해변 산책이 어려울 때는 철도기념관 실내 전시를 중심으로 보고, 여유되면 간몬 해저 인도 터널로 비 없이 바다 밑을 걸어봅니다.",
+            indoorAdvantage = "철도기념관·해저터널 모두 전천후 실내 동선.",
+            nearbyFoodTip = "모지코 '베어 프루츠' 야끼카레 (순한맛)"
         ),
 
         // Day 6
         AlternativeActivity(
-            id = "d6_sarakura_wind",
+            id = "d6_chacha_rain",
             dayNumber = 6,
-            originalSpot = "사라쿠라산 케이블카 & 슬로프카 / 디 아울렛",
-            situation = "강풍/기상 악화로 케이블카 운휴 시",
-            alternativeTitle = "디 아울렛 기타큐슈 & 실내 플라네타륨",
-            alternativeLocation = "JR 가고시마 본선 '스페이스월드역' 도보 2분",
-            transitGuide = "고쿠라역에서 쾌속 열차로 10분 '스페이스월드역' 하차. 디 아울렛 기타큐슈 실내로 바로 연결.",
-            description = "사라쿠라산 케이블카는 초속 15m 이상 강풍 시 안전을 위해 운휴됩니다. 이 경우 디 아울렛 기타큐슈에서 귀국 전 기념품을 여유롭게 구매하고 실내 천체투영관에서 휴식합니다.",
-            indoorAdvantage = "평지 보행로와 안락한 카페 라운지. 부모님 무릎 부담 없이 여유로운 쇼핑.",
-            nearbyFoodTip = "디 아울렛 푸드코트: '텐푸라 타카오' (바삭한 즉석 새우·단호박 튀김 정식)"
+            originalSpot = "차차타운 관람차·야외 이동 / 돈키호테",
+            situation = "우천/악천후 (비 올 때)",
+            alternativeTitle = "세인트시티·아뮤플라자 실내 쇼핑 & 호텔 휴식",
+            alternativeLocation = "세인트시티 고쿠라 / 아뮤플라자 고쿠라",
+            transitGuide = "고쿠라역 직결·역전 실내몰 위주. 비 맞아도 엘리베이터로 호텔 복귀.",
+            description = "관람차·외부 이동이 부담되면 세인트시티와 역내 아뮤플라자에서 기념품을 마무리하고, 일찍 호텔에서 짐 정리·휴식을 합니다.",
+            indoorAdvantage = "역·몰·호텔이 근접해 우천 시 동선이 짧음.",
+            nearbyFoodTip = "스시로 익힌 메뉴 또는 교토 카츠규 규카츠 정식"
         ),
 
         // Day 7
