@@ -636,7 +636,7 @@ function renderJapanese() {
           <p class="meta">${esc(p.situation || state.jaSituation)}</p>
           <h3>${esc(p.korean || "")}</h3>
           <p class="ja-big">${esc(p.japanese || "")}</p>
-          <p class="muted">${esc(p.pronunciation || "")}</p>
+          <p class="muted"><strong>한글 발음:</strong> ${esc(p.pronunciation || "")}</p>
           ${p.tip ? `<div class="tip">${esc(p.tip)}</div>` : ""}
           <div class="actions">
             <button type="button" class="btn btn-ghost" data-speak-ja="${esc(p.japanese || "")}">일본어 읽기</button>
@@ -666,7 +666,7 @@ function renderJapanese() {
           .join("")}
         ${
           state.jaQuizPicked != null
-            ? `<div class="safe" style="margin-top:10px"><strong>발음:</strong> ${esc(q.pronunciation || "")}<br>${esc(q.explanation || "")}</div>
+            ? `<div class="safe" style="margin-top:10px"><strong>한글 발음:</strong> ${esc(q.pronunciation || "")}<br>${esc(q.explanation || "")}</div>
                <div class="actions"><button type="button" class="btn btn-ghost" data-speak-ja="${esc(q.correctJapanese || "")}">정답 읽기</button></div>`
             : ""
         }
@@ -686,7 +686,7 @@ function renderJapanese() {
           ? `<article class="card">
         <p class="meta">자연스러운 일본어</p>
         <p class="ja-big">${esc(r.correctedJapanese || "")}</p>
-        <p class="muted">${esc(r.pronunciation || "")}</p>
+        <p class="muted"><strong>한글 발음:</strong> ${esc(r.pronunciation || "")}</p>
         <p class="muted"><strong>의미:</strong> ${esc(r.naturalKorean || "")}</p>
         <div class="tip">${esc(r.feedback || "")}</div>
         ${(r.betterAlternatives || []).map((a) => `<p class="muted" style="margin-top:8px">• ${esc(a)}</p>`).join("")}
