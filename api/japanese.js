@@ -312,25 +312,9 @@ module.exports = async function handler(req, res) {
     const count = Math.min(Number(body.count) || 4, 6);
 
     if (action === "generate") {
-      // Prefer curated accurate pronunciations; optionally enrich via AI if valid
-      let phrases = pickBank(situation, count);
-      const ai = await callNvidia([
-        { role: "system", content: systemPrompt() },
-        {
-          role: "user",
-          content: `상황:${situation} 수준:${level}
-JSON 배열 ${count}개. keys: korean,japanese,pronunciation,tip
-Example: {"korean":"역은 어디인가요?","japanese":"駅はどこですか？","pronunciation":"에키 와 도코 데스카","tip":"길을 물을 때"}`,
-        },
-      ]);
-      if (ai) {
-        const parsed = extractJson(ai);
-        const filtered = filterPhrases(Array.isArray(parsed) ? parsed : parsed?.phrases || [], situation);
-        if (filtered.length >= Math.min(2, count)) {
-          phrases = filtered.slice(0, count);
-        }
-      }
-      return res.status(200).json({ phrases, source: phrases[0]?.tip ? "mixed" : "bank" });
+      // Always serve curated phrases so Hangul readings stay correct.
+      const phrases = pickBank(situation, count);
+      return res.status(200).json({ phrases, source: "bank" });
     }
 
     if (action === "quiz") {

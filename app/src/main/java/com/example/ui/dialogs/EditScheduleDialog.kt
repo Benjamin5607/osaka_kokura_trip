@@ -72,7 +72,8 @@ fun EditScheduleDialog(
         3 to Pair("9월 22일 (화)", "오사카"),
         4 to Pair("9월 23일 (수)", "키타큐슈"),
         5 to Pair("9월 24일 (목)", "키타큐슈"),
-        6 to Pair("9월 25일 (금)", "키타큐슈")
+        6 to Pair("9월 25일 (금)", "키타큐슈"),
+        7 to Pair("9월 26일 (토)", "후쿠오카")
     )
 
     AlertDialog(
@@ -96,7 +97,7 @@ fun EditScheduleDialog(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.spacedBy(6.dp)
                 ) {
-                    (1..6).forEach { day ->
+                    (1..7).forEach { day ->
                         val isSelected = dayNumber == day
                         Box(
                             modifier = Modifier

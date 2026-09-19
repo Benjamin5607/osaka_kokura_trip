@@ -112,7 +112,7 @@ fun TripMainApp(viewModel: TripViewModel) {
                             modifier = Modifier.padding(top = 2.dp)
                         ) {
                             Text(
-                                text = "9/20 - 9/25 (5박 6일) 가족 플래너",
+                                text = "9/20 - 9/26 (6박 7일) 가족 플래너",
                                 modifier = Modifier.padding(horizontal = 8.dp, vertical = 2.dp),
                                 style = MaterialTheme.typography.labelSmall.copy(
                                     color = Color(0xFFE2E8F0),

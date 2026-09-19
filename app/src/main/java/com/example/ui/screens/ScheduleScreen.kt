@@ -111,7 +111,8 @@ fun ScheduleScreen(
         Triple(3, "9/22 (화)", "오사카 쇼핑·온천"),
         Triple(4, "9/23 (수)", "키타큐슈·고쿠라성"),
         Triple(5, "9/24 (목)", "모지코·간몬 해저터널"),
-        Triple(6, "9/25 (금)", "고쿠라 쇼핑·귀국")
+        Triple(6, "9/25 (금)", "고쿠라 여유·아울렛"),
+        Triple(7, "9/26 (토)", "하카타·공항·부산귀국")
     )
 
     val currentHotel = if (uiState.selectedDay <= 3) {

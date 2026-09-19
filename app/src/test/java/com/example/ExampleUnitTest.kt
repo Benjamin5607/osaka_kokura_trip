@@ -110,7 +110,8 @@ class ExampleUnitTest {
             3 to "9월 22일 (화)",
             4 to "9월 23일 (수)",
             5 to "9월 24일 (목)",
-            6 to "9월 25일 (금)"
+            6 to "9월 25일 (금)",
+            7 to "9월 26일 (토)"
         )
 
         for ((day, expectedDate) in expectedDates) {

@@ -265,7 +265,7 @@ fun IndoorAlternativesTab(
     onOpenMap: (String) -> Unit
 ) {
     var selectedDayFilter by remember { mutableStateOf(0) } // 0: 전체, 1~6
-    val daysList = listOf("전체 Day", "Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6")
+    val daysList = listOf("전체 Day", "Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7")
 
     val filteredList = if (selectedDayFilter == 0) {
         activities

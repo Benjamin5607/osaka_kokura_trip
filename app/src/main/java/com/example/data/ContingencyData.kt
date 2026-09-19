@@ -167,14 +167,28 @@ object ContingencyData {
         AlternativeActivity(
             id = "d6_sarakura_wind",
             dayNumber = 6,
-            originalSpot = "사라쿠라산 케이블카 & 슬로프카",
+            originalSpot = "사라쿠라산 케이블카 & 슬로프카 / 디 아울렛",
             situation = "강풍/기상 악화로 케이블카 운휴 시",
             alternativeTitle = "디 아울렛 기타큐슈 & 실내 플라네타륨",
             alternativeLocation = "JR 가고시마 본선 '스페이스월드역' 도보 2분",
             transitGuide = "고쿠라역에서 쾌속 열차로 10분 '스페이스월드역' 하차. 디 아울렛 기타큐슈 실내로 바로 연결.",
-            description = "사라쿠라산 케이블카는 초속 15m 이상 강풍 시 안전을 위해 운휴됩니다. 이 경우 대체지로 바로 근처의 '디 아울렛 기타큐슈'를 방문합니다. 일본 서부 최대급 실내 천체투영관(플라네타륨)에서 밤하늘 은하수를 감상하고, 쾌적한 실내 쇼핑몰에서 귀국 전 기념품과 선물을 여유롭게 구매할 수 있습니다.",
+            description = "사라쿠라산 케이블카는 초속 15m 이상 강풍 시 안전을 위해 운휴됩니다. 이 경우 디 아울렛 기타큐슈에서 귀국 전 기념품을 여유롭게 구매하고 실내 천체투영관에서 휴식합니다.",
             indoorAdvantage = "평지 보행로와 안락한 카페 라운지. 부모님 무릎 부담 없이 여유로운 쇼핑.",
             nearbyFoodTip = "디 아울렛 푸드코트: '텐푸라 타카오' (바삭한 즉석 새우·단호박 튀김 정식)"
+        ),
+
+        // Day 7
+        AlternativeActivity(
+            id = "d7_morning_rain_transfer",
+            dayNumber = 7,
+            originalSpot = "고쿠라 → 하카타 → 후쿠오카공항",
+            situation = "우천/교통 지연 시",
+            alternativeTitle = "여유 시간 확보 & 특급 소닉·공항선 우선 이용",
+            alternativeLocation = "고쿠라역 JR / 하카타역 지하철 공항선",
+            transitGuide = "JR 운행 지연 시 특급 소닉 지정석 또는 후속 쾌속을 이용하고, 하카타에서는 지하철 공항선으로 국제선에 직행합니다.",
+            description = "10:55 부산행이므로 아침 이동 버퍼를 넉넉히 둡니다. 폭우로 JR이 지연되면 고쿠라역 미도리노마도구치에서 후속편·특급으로 변경하고, 하카타 도착 후 공항선으로 바로 이동합니다.",
+            indoorAdvantage = "고쿠라·하카타·공항 모두 실내 환승 동선이 잘 되어 있어 비에 거의 젖지 않습니다.",
+            nearbyFoodTip = "공항 국제선 카페에서 간단한 빵·커피로 아침 보충 (출국 전)"
         )
     )
 
@@ -231,7 +245,7 @@ object ContingencyData {
         ),
         CityWeatherGuide(
             cityName = "기타큐슈 (고쿠라/모지코)",
-            region = "큐슈 북부 (9/23 - 9/25 일정)",
+            region = "큐슈 북부 (9/23 - 9/26 일정)",
             officialUrl = "https://weather.yahoo.co.jp/weather/jp/40/8220.html",
             avgTemp = "21℃ ~ 27℃ (해안가 바닷바람 강함)",
             weatherTips = "모지코와 간몬 해협은 바닷바람이 불어 체감온도가 낮을 수 있습니다. 사라쿠라산 케이블카 탑승 전 당일 정상 풍속을 확인하세요.",
