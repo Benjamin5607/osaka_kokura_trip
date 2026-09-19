@@ -55,7 +55,23 @@ class ExampleUnitTest {
     @Test
     fun testTripScheduleIntegrityAndKlookTour() {
         val schedules = InitialTripData.getDefaultSchedules()
-        assertTrue("Schedule should contain at least 20 items across 6 days", schedules.size >= 20)
+        assertTrue("Schedule should contain at least 20 items across 7 days", schedules.size >= 20)
+
+        // Day 4 PDF: Yahata museum / outlets / Sarakura
+        val day4 = schedules.filter { it.dayNumber == 4 }
+        assertTrue("Day 4 should include Museum of Natural History", day4.any { it.title.contains("생명의 여행") })
+        assertTrue("Day 4 should include Mt. Sarakura", day4.any { it.title.contains("사라쿠라") })
+
+        // Day 5 PDF: Mojiko then Kokura Castle
+        val day5 = schedules.filter { it.dayNumber == 5 }
+        assertTrue("Day 5 should include Mojiko", day5.any { it.title.contains("모지코") })
+        assertTrue("Day 5 should include Kokura Castle", day5.any { it.title.contains("고쿠라성") })
+        assertFalse("Day 5 should not keep Kanmon tunnel as main plan", day5.any { it.title.contains("간몬") })
+
+        // Day 6 PDF: Saint City / Cha Cha Town / Don Quijote
+        val day6 = schedules.filter { it.dayNumber == 6 }
+        assertTrue("Day 6 should include Cha Cha Town", day6.any { it.title.contains("차차타운") })
+        assertTrue("Day 6 should include Don Quijote", day6.any { it.title.contains("돈키호테") })
 
         // Day 2 must have the Klook Arashiyama Kyoto bus tour
         val day2Schedules = schedules.filter { it.dayNumber == 2 }
@@ -71,7 +87,7 @@ class ExampleUnitTest {
         assertTrue("Osaka schedule should actively feature sashimi for parents", hasSashimiInOsaka)
         assertTrue("Osaka schedule should actively feature wagyu/beef for parents", hasWagyuInOsaka)
 
-        // Verify that offal (내장, 호르몬, 곱창) is strictly excluded from all menus
+        // Verify that offal (내장, 호르몬, 곱창) is strictly excluded from recommended menus
         schedules.forEach { item ->
             assertFalse("Should strictly exclude offal/hormone from recommended menu: ${item.restaurantMenu}", 
                 item.restaurantMenu.contains("곱창") || item.restaurantMenu.contains("호르몬") || item.restaurantMenu.contains("대창"))

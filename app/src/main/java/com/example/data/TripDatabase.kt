@@ -11,7 +11,7 @@ import kotlinx.coroutines.launch
 
 @Database(
     entities = [TripScheduleEntity::class, ChecklistEntity::class, EmergencyContactEntity::class],
-    version = 2,
+    version = 3,
     exportSchema = false
 )
 abstract class TripDatabase : RoomDatabase() {
