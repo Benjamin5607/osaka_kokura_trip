@@ -360,7 +360,7 @@ Example: {"korean":"역은 어디인가요?","japanese":"駅はどこですか�
             correctedJapanese: hit.japanese,
             pronunciation: hit.pronunciation,
             naturalKorean: hit.korean,
-            feedback: "현장 mid에서 바로 쓰기 좋은 표현입니다.".replace("mid", "에서"),
+            feedback: "현장에서 바로 쓰기 좋은 표현입니다.",
             betterAlternatives: [],
           },
         });
